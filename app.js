@@ -26,14 +26,16 @@ const useCart = () => useContext(CartContext);
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(""); // State for error message
   const navigate = useNavigate();
 
   const handleLogin = () => {
     if (email === "user@example.com" && password === "password") {
+      setErrorMessage(""); // Clear any previous error message
       alert("Login successful!");
       navigate("/");
     } else {
-      alert("Invalid credentials");
+      setErrorMessage("Invalid email or password. Please try again."); // Set error message
     }
   };
 
@@ -56,13 +58,17 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleLogin} className="w-full">Login</Button>
+          {errorMessage && ( // Conditionally render error message
+            <p className="text-red-500 text-sm mb-2">{errorMessage}</p>
+          )}
+          <Button onClick={handleLogin} className="w-full">
+            Login
+          </Button>
         </CardContent>
       </Card>
     </div>
   );
 };
-
 // Home Page Component
 const HomePage = () => (
   <div className="p-4">
