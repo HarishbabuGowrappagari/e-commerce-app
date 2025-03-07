@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Wireless Headphones",
-    description: "High-quality wireless headphones with noise cancellation.",
+    description: "High-quality wireless headphones with noise cancellation. Discount up to 20%.",
     price: 99.99,
     image: "https://via.placeholder.com/150", // Replace with actual image URL
   },
