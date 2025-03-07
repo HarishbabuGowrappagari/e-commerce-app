@@ -32,7 +32,7 @@ const Login = () => {
   const handleLogin = () => {
     if (email === "user@example.com" && password === "password") {
       setErrorMessage(""); // Clear any previous error message
-      alert("Login successful!");
+      alert("Login successful..!");
       navigate("/");
     } else {
       setErrorMessage("Invalid email or password. Please try again."); // Set error message
